@@ -1,4 +1,4 @@
-package com.kdt.simpleboard.board.domain;
+package com.kdt.simpleboard.post.domain;
 
 import com.kdt.simpleboard.common.BaseEntity;
 import com.kdt.simpleboard.user.domain.User;
@@ -14,10 +14,10 @@ import static lombok.AccessLevel.*;
 @Entity
 @NoArgsConstructor(access = PROTECTED)
 @Getter
-public class Board extends BaseEntity {
+public class Post extends BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "board_id")
+    @Column(name = "post_id")
     private Long id;
 
     private String title;
@@ -29,13 +29,13 @@ public class Board extends BaseEntity {
     private User user;
 
     @Builder
-    public Board(String title, String content, User user) {
+    public Post(String title, String content, User user) {
         this.title = title;
         this.content = content;
         this.user = user;
     }
 
-    public Board updateBoardInfo(String title, String content) {
+    public Post updatePostInfo(String title, String content) {
         this.title = title;
         this.content = content;
         return this;

@@ -1,4 +1,4 @@
-package com.kdt.simpleboard.board.dto;
+package com.kdt.simpleboard.post.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -8,8 +8,8 @@ import static lombok.AccessLevel.PRIVATE;
 
 @NoArgsConstructor(access = PRIVATE)
 @Getter
-public class BoardRequest {
-    public record CreateBoardRequest(
+public class PostRequest {
+    public record CreatePostRequest(
             Long userId,
 
             @NotBlank(message = "제목을 입력해주세요")
@@ -20,7 +20,7 @@ public class BoardRequest {
     ) {
     }
 
-    public record ModifyBoardRequest(
+    public record ModifyPostRequest(
             @NotBlank(message = "제목을 입력해주세요")
             String title,
 

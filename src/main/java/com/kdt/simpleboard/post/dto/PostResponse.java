@@ -1,6 +1,5 @@
-package com.kdt.simpleboard.board.dto;
+package com.kdt.simpleboard.post.dto;
 
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
@@ -8,15 +7,15 @@ import static lombok.AccessLevel.*;
 
 @NoArgsConstructor(access = PRIVATE)
 @Builder
-public class BoardResponse {
+public class PostResponse {
 
-    public record CreateBoardResponse(
+    public record CreatePostResponse(
             Long createdId
     ) {
     }
 
     @Builder
-    public record FindBoardResponse(
+    public record FindPostResponse(
             Long userId,
             String title,
             String content
