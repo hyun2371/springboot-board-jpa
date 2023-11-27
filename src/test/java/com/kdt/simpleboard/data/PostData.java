@@ -2,6 +2,7 @@ package com.kdt.simpleboard.data;
 
 import com.kdt.simpleboard.post.domain.Post;
 import com.kdt.simpleboard.user.UserData;
+import com.kdt.simpleboard.user.domain.User;
 
 import java.util.List;
 
@@ -39,6 +40,15 @@ public class PostData {
                 .user(UserData.user())
                 .build();
     }
+
+    public static Post post(User user) {
+        return Post.builder()
+                .title("titleA")
+                .content("contentA")
+                .user(user)
+                .build();
+    }
+
 
     public static Post post(String title, String content) {
         return Post.builder()

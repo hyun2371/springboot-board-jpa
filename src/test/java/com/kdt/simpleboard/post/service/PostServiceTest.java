@@ -115,7 +115,7 @@ class PostServiceTest {
 
         when(postRepository.findAll(pageable)).thenReturn(pagedPosts);
 
-        PageResponse<FindPostResponse> response = postService.findAll(pageable);
+        PageResponse<FindPostResponse> response =postService.findAll(pageable);
         assertEquals(posts.size(), response.getItems().size());
         assertEquals(pagedPosts.getTotalElements(), response.getTotalItems());
 

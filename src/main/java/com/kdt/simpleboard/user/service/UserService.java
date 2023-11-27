@@ -4,7 +4,6 @@ import com.kdt.simpleboard.common.exception.CustomException;
 import com.kdt.simpleboard.common.exception.ErrorCode;
 import com.kdt.simpleboard.user.domain.User;
 import com.kdt.simpleboard.user.dto.UserMapper;
-import com.kdt.simpleboard.user.dto.UserRequest;
 import com.kdt.simpleboard.user.dto.UserResponse;
 import com.kdt.simpleboard.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

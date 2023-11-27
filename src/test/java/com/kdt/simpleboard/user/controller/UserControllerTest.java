@@ -2,7 +2,7 @@ package com.kdt.simpleboard.user.controller;
 
 import com.kdt.simpleboard.BaseIntegrationTest;
 import com.kdt.simpleboard.user.UserData;
-import com.kdt.simpleboard.user.service.UserService;
+import com.kdt.simpleboard.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class UserControllerTest extends BaseIntegrationTest {
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     @Test
     @DisplayName("회원 생성 api 호출에 성공한다.")
@@ -34,8 +34,8 @@ class UserControllerTest extends BaseIntegrationTest {
     @Test
     @DisplayName("중복 이름의 회원이 존재하면 회원 api 생성 호출에 실패한다.")
     void createUserWithFail() throws Exception {
+        userRepository.save(UserData.user());
         CreateUserRequest createUserRequest = UserData.createUserReq();
-        userService.createUser(createUserRequest);
 
         mvc.perform(post("/users")
                         .contentType(APPLICATION_JSON)

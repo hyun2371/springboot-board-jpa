@@ -3,7 +3,6 @@ package com.kdt.simpleboard.user.service;
 import com.kdt.simpleboard.common.exception.CustomException;
 import com.kdt.simpleboard.common.exception.ErrorCode;
 import com.kdt.simpleboard.user.domain.User;
-import com.kdt.simpleboard.user.dto.UserResponse;
 import com.kdt.simpleboard.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
