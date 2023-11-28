@@ -1,11 +1,9 @@
 package com.kdt.simpleboard.user.dto;
 
 import com.kdt.simpleboard.user.domain.User;
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
-import static com.kdt.simpleboard.user.dto.UserResponse.*;
-import static lombok.AccessLevel.*;
+import static lombok.AccessLevel.PRIVATE;
 
 @NoArgsConstructor(access = PRIVATE)
 public class UserMapper {
@@ -13,7 +11,7 @@ public class UserMapper {
         return new CreateUserResponse(user.getId());
     }
 
-    public static User toUser(UserRequest.CreateUserRequest request) {
+    public static User toUser(CreateUserRequest request) {
         return User.builder()
                 .name(request.name())
                 .hobby(request.hobby())

@@ -1,11 +1,7 @@
 package com.kdt.simpleboard.user;
 
 import com.kdt.simpleboard.user.domain.User;
-import com.kdt.simpleboard.user.dto.UserRequest;
-import com.kdt.simpleboard.user.dto.UserResponse;
-
-import static com.kdt.simpleboard.user.dto.UserRequest.*;
-import static com.kdt.simpleboard.user.dto.UserResponse.*;
+import com.kdt.simpleboard.user.dto.CreateUserRequest;
 
 public class UserData {
     private static final String NAME = "hyun";

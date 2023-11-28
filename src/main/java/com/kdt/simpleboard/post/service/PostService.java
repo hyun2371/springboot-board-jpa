@@ -3,7 +3,11 @@ package com.kdt.simpleboard.post.service;
 import com.kdt.simpleboard.common.dto.PageResponse;
 import com.kdt.simpleboard.common.exception.CustomException;
 import com.kdt.simpleboard.post.domain.Post;
-import com.kdt.simpleboard.post.dto.PostMapper;
+import com.kdt.simpleboard.post.dto.*;
+import com.kdt.simpleboard.post.dto.request.CreatePostRequest;
+import com.kdt.simpleboard.post.dto.request.ModifyPostRequest;
+import com.kdt.simpleboard.post.dto.response.CreatePostResponse;
+import com.kdt.simpleboard.post.dto.response.FindPostResponse;
 import com.kdt.simpleboard.post.repository.PostRepository;
 import com.kdt.simpleboard.user.domain.User;
 import com.kdt.simpleboard.user.service.UserService;
@@ -15,10 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static com.kdt.simpleboard.common.exception.ErrorCode.NOT_EXIST_POST_ID;
 import static com.kdt.simpleboard.post.dto.PostMapper.*;
-import static com.kdt.simpleboard.post.dto.PostRequest.CreatePostRequest;
-import static com.kdt.simpleboard.post.dto.PostRequest.ModifyPostRequest;
-import static com.kdt.simpleboard.post.dto.PostResponse.CreatePostResponse;
-import static com.kdt.simpleboard.post.dto.PostResponse.FindPostResponse;
 
 @Service
 @RequiredArgsConstructor

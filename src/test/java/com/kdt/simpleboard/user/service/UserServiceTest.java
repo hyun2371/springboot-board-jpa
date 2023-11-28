@@ -3,6 +3,8 @@ package com.kdt.simpleboard.user.service;
 import com.kdt.simpleboard.common.exception.CustomException;
 import com.kdt.simpleboard.common.exception.ErrorCode;
 import com.kdt.simpleboard.user.domain.User;
+import com.kdt.simpleboard.user.dto.CreateUserRequest;
+import com.kdt.simpleboard.user.dto.CreateUserResponse;
 import com.kdt.simpleboard.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,8 +15,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static com.kdt.simpleboard.user.UserData.*;
-import static com.kdt.simpleboard.user.dto.UserRequest.*;
-import static com.kdt.simpleboard.user.dto.UserResponse.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 

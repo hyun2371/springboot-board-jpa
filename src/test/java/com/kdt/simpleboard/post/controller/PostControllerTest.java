@@ -4,7 +4,9 @@ import com.kdt.simpleboard.BaseIntegrationTest;
 import com.kdt.simpleboard.common.dto.PageResponse;
 import com.kdt.simpleboard.data.PostData;
 import com.kdt.simpleboard.post.domain.Post;
-import com.kdt.simpleboard.post.dto.PostRequest;
+import com.kdt.simpleboard.post.dto.request.CreatePostRequest;
+import com.kdt.simpleboard.post.dto.response.FindPostResponse;
+import com.kdt.simpleboard.post.dto.request.ModifyPostRequest;
 import com.kdt.simpleboard.post.repository.PostRepository;
 import com.kdt.simpleboard.post.service.PostService;
 import com.kdt.simpleboard.user.UserData;
@@ -18,8 +20,6 @@ import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
-import static com.kdt.simpleboard.post.dto.PostRequest.ModifyPostRequest;
-import static com.kdt.simpleboard.post.dto.PostResponse.FindPostResponse;
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -47,7 +47,7 @@ class PostControllerTest extends BaseIntegrationTest {
     @Test
     @DisplayName("게시물 생성 api 호출에 성공한다")
     void createPost() throws Exception {
-        PostRequest.CreatePostRequest createPostRequest = PostData.createPostRequest(user.getId());
+        CreatePostRequest createPostRequest = PostData.createPostRequest(user.getId());
         mvc.perform(post("/posts")
                         .contentType(APPLICATION_JSON)
                         .accept(APPLICATION_JSON)

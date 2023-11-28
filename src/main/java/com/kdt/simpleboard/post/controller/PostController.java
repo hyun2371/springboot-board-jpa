@@ -1,8 +1,11 @@
 package com.kdt.simpleboard.post.controller;
 
-import com.kdt.simpleboard.post.dto.PostRequest;
-import com.kdt.simpleboard.post.service.PostService;
 import com.kdt.simpleboard.common.dto.PageResponse;
+import com.kdt.simpleboard.post.dto.request.CreatePostRequest;
+import com.kdt.simpleboard.post.dto.response.CreatePostResponse;
+import com.kdt.simpleboard.post.dto.response.FindPostResponse;
+import com.kdt.simpleboard.post.dto.request.ModifyPostRequest;
+import com.kdt.simpleboard.post.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,8 +16,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.kdt.simpleboard.post.dto.PostResponse.CreatePostResponse;
-import static com.kdt.simpleboard.post.dto.PostResponse.FindPostResponse;
 
 @RestController
 @RequestMapping("/posts")
@@ -24,7 +25,7 @@ public class PostController {
 
     @Operation(summary = "게시물 생성")
     @PostMapping
-    public ResponseEntity<CreatePostResponse> createPost(@Valid @RequestBody PostRequest.CreatePostRequest request) {
+    public ResponseEntity<CreatePostResponse> createPost(@Valid @RequestBody CreatePostRequest request) {
         CreatePostResponse response = postService.createPost(request);
         return ResponseEntity.ok(response);
     }
@@ -35,7 +36,7 @@ public class PostController {
                     content = @Content(mediaType = "application/json"))
     })
     @PostMapping("/{id}")
-    public ResponseEntity<FindPostResponse> updatePost(@PathVariable("id") Long postId, @Valid @RequestBody PostRequest.ModifyPostRequest request) {
+    public ResponseEntity<FindPostResponse> updatePost(@PathVariable("id") Long postId, @Valid @RequestBody ModifyPostRequest request) {
         FindPostResponse response = postService.updatePost(postId, request);
         return ResponseEntity.ok(response);
     }

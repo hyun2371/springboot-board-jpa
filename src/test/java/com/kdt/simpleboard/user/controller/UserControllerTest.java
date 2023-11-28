@@ -2,13 +2,13 @@ package com.kdt.simpleboard.user.controller;
 
 import com.kdt.simpleboard.BaseIntegrationTest;
 import com.kdt.simpleboard.user.UserData;
+import com.kdt.simpleboard.user.dto.CreateUserRequest;
 import com.kdt.simpleboard.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import static com.kdt.simpleboard.user.dto.UserRequest.CreateUserRequest;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
